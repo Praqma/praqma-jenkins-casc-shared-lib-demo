@@ -4,5 +4,8 @@ def list(String nodeName = "master") {
     def currentNode = Jenkins.instance.getNode(nodeName)
     echo "Found current node: $currentNode"
     def labelAtoms = currentNode.getAssignedLabels()
+    for(label l in labelAtoms) {
+        echo "$l"
+    }
     return "hehe"
 }
